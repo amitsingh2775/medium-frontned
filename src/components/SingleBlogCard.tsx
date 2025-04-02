@@ -1,6 +1,6 @@
 import AppBar from "./AppBar";
 import { Blog } from "../hook";
-import { Avtar } from "./BlogCard"; // ✅ Ensure Avtar component is correctly imported
+import { Avtar } from "./BlogCard"; 
 
 export const SingleBlogCard = ({ blog }: { blog: Blog }) => {
   return (
@@ -17,7 +17,7 @@ export const SingleBlogCard = ({ blog }: { blog: Blog }) => {
               <p className="text-lg sm:text-2xl font-bold">{blog.auther?.name || "Unknown Author"}</p>
             </div>
             <p className="text-slate-500 text-sm sm:text-base mt-2">
-             {blog.auther?.bio || "add bio"}
+            {blog.auther?.bio ?? "Bio not available"} 
             </p>
           </div>
 

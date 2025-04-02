@@ -8,7 +8,8 @@ export  interface Blog{
     "id": string;
     "createdAt": string;
     "auther": {
-        "name": string | null
+        "name": string | null;
+        "bio"?:string | null
     }
 }
 
