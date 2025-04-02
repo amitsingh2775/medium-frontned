@@ -1,8 +1,9 @@
-import { ChangeEvent, ChangeEventHandler, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import { Link ,useNavigate} from "react-router-dom"
 import { SignupInput } from 'zodiya'
 import { Backend_URL } from "../Config"
 import axios from "axios"
+
 
 function Auth({ type }: { type: "login" | "signup" }) {
 
@@ -17,6 +18,8 @@ function Auth({ type }: { type: "login" | "signup" }) {
         try {
             const res=await axios.post(`${Backend_URL}/api/v1/user/${type==="signup" ? "singup": "login"}`,postInputs)
             const jwt=res.data.jwt
+            console.log(jwt);
+            
             localStorage.setItem("token",jwt)
             navigate("/")
         } catch (error) {
